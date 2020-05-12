@@ -1,3 +1,5 @@
+import 'package:bipolar_factory/screens/mainScreen.dart';
+import 'package:bipolar_factory/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -8,9 +10,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Bipolar Factory',
-      theme: ThemeData(
-
+      theme: ThemeData.light().copyWith(
+        primaryColor: PrimaryColor,
+        scaffoldBackgroundColor: AccentColor,
+        accentColor: AccentColor
       ),
+      initialRoute: MainScreen.id,
+      routes: {
+        MainScreen.id: (context) => MainScreen()
+      }
     );
   }
 }
